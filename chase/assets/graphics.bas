@@ -1,4 +1,3 @@
-1 'The Chase, by Ghadeer Abou-Saleh (https://ghadeeras.github.io)
 1 color 15,1,5 : screen 2,2,0
 
 10 dim B%(4) : for I=0 to 4 : B%(I)=base(10+I) : next I

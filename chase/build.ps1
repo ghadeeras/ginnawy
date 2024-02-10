@@ -1,5 +1,0 @@
-Remove-Item -Force -Recurse -Path ".out"
-New-Item -ItemType Directory -Force -Path ".out\dsk"
-Copy-Item -Path ".lib\*" -Destination ".out\dsk"
-Start-Process -FilePath "$Env:OPENMSX_PATH\openmsx.exe" -Wait -ArgumentList "-control","stdio" -RedirectStandardInput "build\disk-content.xml"
-Start-Process -FilePath "$Env:OPENMSX_PATH\openmsx.exe" -Wait -ArgumentList "-control","stdio" -RedirectStandardInput "build\disk-image.xml"

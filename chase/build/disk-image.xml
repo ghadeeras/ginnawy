@@ -1,6 +1,0 @@
-<openmsx-control>
-    <command>machine Sanyo_PHC-70FD</command>
-    <command>diska insert .out/dsk</command>
-    <command>diskmanipulator savedsk diska .out/game.dsk</command>
-    <command>exit</command>
-</openmsx-control>
