@@ -1,0 +1,23 @@
+<openmsx-control>
+    <command>machine Sanyo_PHC-70FD</command>
+    <command>diska insert .out/dsk</command>
+    <command>set throttle off</command>
+    <command>set default_type_proc type_via_keybuf</command>
+    <command>set power on</command>
+
+    <command>type \rnew\r</command>
+    <command>type_from_file assets/graphics.bas</command>
+    <command>type \rrun\r</command>
+    <command>type y</command>
+
+    <command>type \rnew\r</command>
+    <command>type_from_file src/game.bas</command>
+    <command>type \rsave"game.bas"\r</command>
+    
+    <command>type \rnew\r</command>
+    <command>type_from_file src/autoexec.bas</command>
+    <command>type \rsave"autoexec.bas"\r</command>
+
+    <command>debug set_watchpoint -once write_mem 0xfffe {[debug read "memory" 0xfffe] == 0} {exit}</command>
+    <command>type \rpoke&amp;hfffe,0\r</command>
+</openmsx-control>

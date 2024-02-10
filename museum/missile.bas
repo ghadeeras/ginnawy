@@ -1,0 +1,59 @@
+10 OPEN "grp:"AS#1
+20  P$="t255    o5cco4go5cecegco6co5bagg2    rrgfdo4bgbo5dfecagg2  ":Z$="t255   ro4ego5co4gego5co4gfao5co4aeg    o5co4gdgbgdgbgego5co4gego5co4g"
+30 KEY OFF:COLOR 15,1,1:CLS:LOCATE0,5:PRINT"*   * ***  ***   ***  *   ***** **  *  *     *     *   *  * * *  *   ***   ***  *   ****   *  *      *     * *   *  *   * ***  ***   ***  *** ***                                      "
+40 LOCATE 9 ,12:PRINT"     by                                                    ginawy co.                   __________"
+50 PLAY P$,Z$
+60 FOR H=0TO3000
+70 NEXT H
+80 LOCATE 4,18:PRINT"push any key to start"
+90 IF INKEY$= ""THEN GOTO 90   ELSE GOTO 100
+100 BEEP:CLS:SCREEN2:Y=172:X=10
+110 PRESET(190,8):PRINT#1,"score"
+120 PRESET(190,50):PRINT#1,"lives"
+130 PRESET(190,24):PRINT#1,C
+140 PRESET(190,66):PRINT#1,W+1
+150  LINE(0,0)-(188,188),4,BF
+160  LINE(8,8)-(180,180),1,BF
+170  FOR T=180TO150STEP-1:CIRCLE(88,T),10,15,,,.5  :NEXT T:CIRCLE(88,151),8,1 ,,,.5:PAINT(88,151),1
+180 FOR B=1 TO 75
+190 PSET(RND(1)*172+8,RND(1)*172+8),15:NEXT
+200  A$=CHR$(&B00011000)
+210  B$=CHR$(&B00011000)
+220 C$=CHR$(&B00011000)
+230 D$=CHR$(&B00100100)
+240 E$=CHR$(&B01100110)
+250 F$=CHR$(&B11100111)
+260 G$=CHR$(&B11100111)
+270 H$=CHR$(&B00111100)
+280 SPRITE$(0)=A$+B$+C$+D$+E$+F$+G$+H$
+290 I$=CHR$(&B11111111)
+300 J$=CHR$(&B10011001)
+310 PUT SPRITE0,(85 ,Y-2),15
+320 SPRITE$(1)=G$+H$+E$+F$+C$+D$+A$+B$
+330 X=X+1:PUT SPRITE1,(X  ,10 ),(C/10)+2:IF X=172 THEN X=9
+340 IF STICK(0)=1 THEN GOTO 360
+350 GOTO 330
+360 Y=Y-1:PUT SPRITE0,(85 ,Y-2):IFY=8THEN GOTO 380
+370      GOTO 360
+380 FOR O=0TO15:CIRCLE(89,Y+2),O,8,3.1415,0  :NEXT:FOR U=0TO15:CIRCLE(89,Y+2),15-U,1,3.1415,0:NEXTU:IF C=40 THEN E=E+1:W=W+1:X=9:C=0:GOTO 450
+390 IF X> 78 ANDX< 90  THENC=C+10:      GOTO 430
+400 IF W=0THEN LINE(0,0)-(255,191),1,BF:GOTO 470
+410 IF C=50 THENW=W+1:C=0
+420 W=W-1:GOTO 450
+430 LINE(190,24)-(255,32),1,BF:PRESET(190,24):PRINT#1,C
+440 Y=172:X=10:GOTO310ELSE GOTO 440
+450 LINE(190,60)-(255,191),1,BF:PRESET(190,66):PRINT#1,W+1:IF E>3THEN GOTO 530
+460 Y=172:           GOTO310
+470 CLS:SCREEN 1:LOCATE10,11     :Q$= "t255o6deco5a   abg2deco4a   abg2deco3a   abaa-g ":C=0:E=0:W=0:PLAYQ$:GOTO 490
+480 FOR J=0TO 3000:GOTO 500
+490  PRINT"GAME OVER":GOTO 480
+500 NEXT
+510 IF INKEY$<>""THEN510
+520 GOTO 20
+530 LINE(0,0)-(255,191),1,BF:CLS:SCREEN1:LOCATE5,8:PRINT"   CONGRATULATIONS              _______________                                        YOU ARE A GOOD PLAYER                                     YOU KILED THE ENEMIES "
+540 PLAY"t255m2000s11o2ao3eo4c#o3eo2ao3eo4c#o3eo2ao3f#o4d#o3f#o2ao3f#o4d#o3f#o2ao3f#o4do3f#o2ao3f#o4do3f#o2ao3eo4c#o3eo2a2g#2f#o3c#ac#o2f#o3c#ac#c#g#o4eo3g#c#g#o4eo3g#o2bo3f#o4do3f#o2bo3f#o4do3f#o2go3dbdo2ao3eo4c#ro3dao4f#o3ada"
+550 PLAY"t255m2000s11o4F#O3AC#G#O4EO3G#O2AO3EO4C#O3EDAo4F#o3ADAo4F#o3AC#G#o4Eo3G#o3ao4f# f#"
+560 C=0:W=1:E=0:FOR K=0TO9000
+570 NEXT
+580 IF INKEY$<>""THEN GOTO 580
+590 GOTO 20
